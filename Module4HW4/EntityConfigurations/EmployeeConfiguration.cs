@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Module4HW3.Entities;
+using Module4HW4.Entities;
 
-namespace Module4HW3.EntityConfigurations
+namespace Module4HW4.EntityConfigurations
 {
     public class EmployeeConfiguration : IEntityTypeConfiguration<EmployeeEntity>
     {
@@ -21,6 +16,7 @@ namespace Module4HW3.EntityConfigurations
             entityTypeBuilder.Property(e => e.DateOfBirth).HasColumnName("DateOfBirth").HasColumnType("date");
             entityTypeBuilder.Property(e => e.OfficeId).IsRequired().HasColumnName("OfficeId").HasColumnType("int");
             entityTypeBuilder.Property(e => e.TitleId).IsRequired().HasColumnName("TitleId").HasColumnType("int");
+
             entityTypeBuilder.HasOne(e => e.Office)
                              .WithMany(o => o.Employees)
                              .HasForeignKey(e => e.OfficeId)

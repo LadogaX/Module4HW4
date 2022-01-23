@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Module4HW3.Entities;
+using Module4HW4.Entities;
 
-namespace Module4HW3.EntityConfigurations
+namespace Module4HW4.EntityConfigurations
 {
-   public class ProjectConfiguration : IEntityTypeConfiguration<ProjectEntity>
+    public class ProjectConfiguration : IEntityTypeConfiguration<ProjectEntity>
     {
         public void Configure(EntityTypeBuilder<ProjectEntity> entityTypeBuilder)
         {

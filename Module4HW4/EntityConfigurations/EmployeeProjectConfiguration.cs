@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Module4HW3.Entities;
+using Module4HW4.Entities;
 
-namespace Module4HW3.EntityConfigurations
+namespace Module4HW4.EntityConfigurations
 {
-   public class EmployeeProjectConfiguration : IEntityTypeConfiguration<EmployeeProjectEntity>
+    public class EmployeeProjectConfiguration : IEntityTypeConfiguration<EmployeeProjectEntity>
     {
         public void Configure(EntityTypeBuilder<EmployeeProjectEntity> entityTypeBuilder)
         {
@@ -25,9 +20,9 @@ namespace Module4HW3.EntityConfigurations
                              .HasForeignKey(e => e.ProjectId)
                              .OnDelete(DeleteBehavior.Cascade);
 
-            entityTypeBuilder.HasOne(e => e.Projects)
+            entityTypeBuilder.HasOne(e => e.Employees)
                              .WithMany(o => o.EmployeeProjects)
-                             .HasForeignKey(e => e.ProjectId)
+                             .HasForeignKey(e => e.EmployeeId)
                              .OnDelete(DeleteBehavior.Cascade);
         }
     }
