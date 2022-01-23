@@ -1,12 +1,16 @@
 ﻿using System;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
-namespace Module4HW3
+namespace Module4HW4
 {
     public class Program
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
+            Console.Read();
+            Console.WriteLine("Done.");
         }
     }
 }
